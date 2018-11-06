@@ -12,6 +12,7 @@ Installation:
 
 Usage:
 
-Simply click the new "Check VT" button added to your toolbar, and wait for the queries to complete.<br>
+To check a single sessions - right-click it and select "VirusTotal Lookup" <br>
+The check all the sessions - simply click the new "Check VT" button added to your toolbar, and wait for the queries to complete.<br>
 Depending on how many sessions you have, this could take a while (TODO: implement async queries).<br>
 When the process is done, you'll see the results in the Comments column in a Positives/Total format. "VT: N/A" means the hash was not found on VirusTotal, or the API has ran into an issue. "Error" usually means VirusTotal has returned a 403 Unauthorized response, in which case your API Key has, most likely, run out of queries
