@@ -122,6 +122,17 @@ namespace Fiddler
             FiddlerApplication.UI.lvSessions.SelectedItems.Clear();
         }
 
+		// Check the current hash against VT
+        [ContextAction("VirusTotal Lookup")]
+        public static void DoCheckHashVT(Session[] arrSessions) 
+        {
+            for (int x = 0; x < arrSessions.Length; x++)
+            {
+                if (arrSessions[x].bHasResponse) {
+                    Utilities.LaunchHyperlink(string.Format("https://www.virustotal.com/en/file/{0}/analysis/",arrSessions[x].GetResponseBodyHash("sha256").Replace("-","")));   
+                }
+            }
+        }
 		
         // The following snippet demonstrates a custom-bound column for the Web Sessions list.
         // See http://fiddler2.com/r/?fiddlercolumns for more info
